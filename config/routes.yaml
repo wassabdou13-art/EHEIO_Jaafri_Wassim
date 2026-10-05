@@ -1,0 +1,16 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+index:
+    path: /index/{name}
+    controller: App\Controller\IndexController::index
+    requirements:
+        name: '\d+'
+twig:
+    file_name_pattern: '*.twig'
+    form_themes: ['bootstrap_5_layout.html.twig']
+when@test:
+    twig:
+        strict_variables: true
